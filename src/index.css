@@ -76,3 +76,8 @@ button:focus-visible {
   height: 250px;
   width: 300px;
 }
+
+.comment-box {
+  border: 1px solid black;
+  margin: 10px;
+}
