@@ -7,7 +7,7 @@ function ArticleList(){
     const [articlesData, setArticlesData] = useState([]);
 
     useEffect(() => {
-        getContent().then(({articles}) => {
+        getContent("articles").then(({articles}) => {
             setArticlesData(articles)
         })
     }, [])
@@ -18,7 +18,6 @@ function ArticleList(){
             <p>I'm a placeholder for the all articles/sort by bar</p>
           </section>
           <section>
-            <p>This is where the article cards go!</p>
             {articlesData.map((article) => {
                 return <ArticleCard key={article.article_id} article={article}/>
             })}
