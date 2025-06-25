@@ -15,11 +15,11 @@ function ArticleComments (){
     return (
         <>
           {commentData.map((comment) => {
-            const { author, body, created_at, votes } = comment
+            const { author, body, created_at, votes, comment_id } = comment
             const humanDate = new Date(created_at)
 
             return (
-                <div className="comment-box">
+                <div className="comment-box" key={comment_id}>
                   <h3>{author} at {humanDate.toString()}</h3> 
                   <p>{body}</p>
                   <p>Votes: {votes}</p>
