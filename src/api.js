@@ -57,3 +57,21 @@ export const postComment = (articleId, user, text) => {
     return res.json()
   })
 }
+
+export const deleteComment = (commentId) => {
+  return fetch(`${baseUrl}/comments/${commentId}`, {
+    method: "DELETE",
+    headers: {
+        'Content-type': 'application/json'
+    }
+  })
+  .then((res) => {
+    if(!res.ok) {
+      return Promise.reject({
+        status: res.status,
+        msg: 'failed to delete comment'
+      })
+    }
+    return res
+  })
+}

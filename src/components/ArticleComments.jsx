@@ -2,13 +2,15 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
-import { getContent, postComment } from "../api"
+import { getContent, postComment, deleteComment } from "../api"
 
 function ArticleComments ({error, isError, loading, isLoading}){
     const [commentData, setCommentData] = useState([])
     const [newComment, setNewComment] = useState('')
+    const [isDeleting, setIsDeleting] = useState(false)
     const { articleId } = useParams()
     const { loggedInUser } = useContext(UserContext)
+    let hasAlreadyClicked = false
 
     useEffect(() => {
         getContent(`articles/${articleId}/comments`).then(({comments}) => {
@@ -32,6 +34,20 @@ function ArticleComments ({error, isError, loading, isLoading}){
       })
     }
 
+    function deleteChosenComment(e, comment_id) {
+      setIsDeleting(true)
+      hasAlreadyClicked = true
+      console.log("I'll be doing some deleting")
+      deleteComment(comment_id).then(() => {
+        setIsDeleting(false)
+      })
+      .catch((err) => {
+        isError(err.msg)
+        setIsDeleting(false)
+        hasAlreadyClicked = false
+      })
+    }
+
     return (
         <>
           <form method="post" onSubmit={addNewComment}>
@@ -51,6 +67,8 @@ function ArticleComments ({error, isError, loading, isLoading}){
                   <h3>{author} at {humanDate.toString()}</h3> 
                   <p>{body}</p>
                   <p>Votes: {votes}</p>
+                  {author === loggedInUser.username ? <button onClick={hasAlreadyClicked ? null : (e) => deleteChosenComment(e, comment_id)}>Delete Comment</button> : null}
+                  {isDeleting ? <p>Your comment is being deleted...</p> : null}
                 </div>
             )
           })}
