@@ -11,10 +11,7 @@ export const getContent = (urlLocation) => {
 }
 
 export const patchVotes = (articleId, amount) => {
-  const body = JSON.stringify({
-    inc_votes: amount,
-  });
-    console.log(body)
+  const body = JSON.stringify({inc_votes: amount})
   return fetch(`${baseUrl}/articles/${articleId}`, {
     method: 'PATCH',
     body,
