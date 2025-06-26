@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import { useContext } from 'react'
+import { UserContext } from '../contexts/UserContext'
 
 function Header (){
+  const {loggedInUser} = useContext(UserContext)
     return (
         <>
           <h1>NC News</h1>
@@ -9,6 +12,7 @@ function Header (){
             <Link to="/articles">Articles </Link>
             <Link to="/topics">Topics </Link>
           </nav>
+          <p>You are currently logged in as: {loggedInUser.username}</p>
         </>
     )
 }

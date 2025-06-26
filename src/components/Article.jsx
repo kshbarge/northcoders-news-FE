@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { getContent, patchVotes } from "../api"
 import ArticleComments from "./ArticleComments"
 
-function Article ({voteCounter, setVoteCounter, error, isError}){
+function Article ({voteCounter, setVoteCounter, error, isError, loading, isLoading}){
     const [singleArticleData, setSingleArticleData] = useState({})
     const { articleId } = useParams()
 
@@ -50,7 +50,7 @@ function Article ({voteCounter, setVoteCounter, error, isError}){
             <p>Comments: {comment_count}</p>
           </section>
           <section>
-            <ArticleComments/>
+            <ArticleComments error={error} isError={isError} loading={loading} isLoading={isLoading}/>
           </section>
         </>
     )

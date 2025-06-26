@@ -8,13 +8,14 @@ import Article from "./Article"
 
 function Content (){
     const [voteCounter, setVoteCounter] = useState(0)
-    const [error, isError] =useState(null)
+    const [error, isError] = useState(null)
+    const [loading, isLoading] = useState(false)
     return (
         <section>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/error" element={<ErrorPage />} />
-            <Route path="/articles/:articleId" element={<Article voteCounter={voteCounter} setVoteCounter={setVoteCounter} error={error} isError={isError} />} />
+            <Route path="/articles/:articleId" element={<Article voteCounter={voteCounter} setVoteCounter={setVoteCounter} error={error} isError={isError} loading={loading} isLoading={isLoading}/>} />
             <Route path="/articles/:articleId/comments" element={<Article />} />
             <Route path="/articles" element={<ArticlesList />} />
             <Route path="/topics/:topicName" element={<ArticlesList />} />
