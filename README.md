@@ -1,12 +1,14 @@
-# React + Vite
+## NC News Frontend
+>The deployed version of this project can be found at https://gentle-rabanadas-6dbca4.netlify.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+>The backend repository for this project can be found at https://github.com/kshbarge/nc-news
 
-Currently, two official plugins are available:
+- NC news is a project showcasing a full stack of development technologies, by creating a news app with basic CRUD functionality. This repository contains the frontend data of the site, and uses React to create a navigable webpage. The hosted website is already populated with dummy data, so it is open to navigate around and interact with!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- The minimum version of node required to run this repo locally is v23.11.0.
 
-## Expanding the ESLint configuration
+- If you wish to run this project locally, make a fork of it and then use the command `git clone (your repo url)` in the location at which you wish to set up a local repository. From here, you can use `cd (repo name)` to navigate into the repository, and `code .` to open it in VScode if you have it downloaded.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+------
+This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
+
