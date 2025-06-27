@@ -77,6 +77,16 @@ button:focus-visible {
   width: 300px;
 }
 
+.topicCardBox {
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.topicCardImage {
+  height: 250px;
+  width: 300px;
+}
+
 .comment-box {
   border: 1px solid black;
   margin: 10px;
