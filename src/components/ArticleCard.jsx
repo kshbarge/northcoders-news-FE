@@ -7,7 +7,19 @@ function ArticleCard ({article}){
 
     return (
         <Link to={ `/articles/${article_id}`}>
-          <div className="articleCardBox">
+          <div class="card">
+            <img src={article_img_url} class="card-img-top" alt="..."></img>
+            <div class="card-body">
+              <h3 class="card-title">{title}</h3>
+              <p>By {author} in {topic}</p>
+            </div>
+            <div class="card-footer">
+              <p>Votes: {votes}</p>
+              <p>Comments: {comment_count}</p>
+              <p>{humanDate.toString()}</p>
+            </div>
+          </div>
+          {/*<div className="articleCardBox">
               <img src={article_img_url} className="articleCardImage"/>
               <h3>{title}</h3>
               <p>{author}</p>
@@ -15,7 +27,7 @@ function ArticleCard ({article}){
               <p>Votes: {votes}</p>
               <p>Comments: {comment_count}</p>
               <p>{humanDate.toString()}</p>
-          </div>
+          </div>*/}
         </Link>
     )
 }
