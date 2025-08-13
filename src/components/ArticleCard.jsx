@@ -7,7 +7,7 @@ function ArticleCard ({article}){
 
     return (
         <Link to={ `/articles/${article_id}`}>
-          <div class="card">
+          <div class="card w-25 m-3">
             <img src={article_img_url} class="card-img-top" alt="..."></img>
             <div class="card-body">
               <h3 class="card-title">{title}</h3>
