@@ -6,14 +6,14 @@ import Footer from "./components/Footer"
 
 function App() {
   return (
-    <section>
+    <section class="d-flex flex-column min-vh-100">
       <header>
         <Header/>
       </header>
       <main>
         <Content/>
       </main>
-      <footer>
+      <footer class="mt-auto">
         <Footer/>
       </footer>
     </section>
