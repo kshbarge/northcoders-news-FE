@@ -42,7 +42,7 @@ function ArticleList(){
             </form>
           </section>
           <section>
-            <div class="">
+            <div class="row row-cols-sm-2 row-cols-md-3">
             {articlesData.map((article) => {
                 return <ArticleCard key={article.article_id} article={article}/>
             })}
