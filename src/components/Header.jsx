@@ -7,7 +7,7 @@ function Header (){
     return (
         <>
           <h1 class="text-center">NC News</h1>
-          <nav class="navbar navbar-expand-lg bg-danger p-3 mb-2">
+          <nav class="navbar rounded-bottom-5 navbar-expand-lg bg-danger p-3 mb-2">
             <div class="container-fluid">
               <Link to="/" class="navbar-brand nav-link link-light">
                 Home 
