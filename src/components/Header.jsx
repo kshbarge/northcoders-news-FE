@@ -6,7 +6,10 @@ function Header (){
   const {loggedInUser} = useContext(UserContext)
     return (
         <>
-          <h1 class="text-center">NC News</h1>
+          <div class="d-flex justify-content-center bg-danger-subtle">
+            <img src="../public/icons8-morning-news-64.png" alt="Northcoders news logo"/>
+            <h1 class="p-3">NC News</h1>
+          </div>
           <nav class="navbar rounded-bottom-5 navbar-expand-lg bg-danger p-3 mb-2">
             <div class="container-fluid">
               <Link to="/" class="navbar-brand nav-link link-light">
